@@ -1,23 +1,25 @@
 import React from "react";
-import { Link } from 'react-router-dom';
-import Hamburger from './Hamburger'
+import { Link } from "react-router-dom";
+import Hamburger from "./Hamburger";
 
 const Header = () => {
-  return <header>
-    <div className="container">
-      <div className="wrapper">
-        <div className="inner-header">
-          <div className="logo">
-            <Link to="/">DIGILUTION.</Link>
-          </div>
-          <div className="menu">
-            <button>Menu</button>
+  return (
+    <header>
+      <div className="container">
+        <div className="wrapper">
+          <div className="inner-header">
+            <div className="logo">
+              <Link to="/">DIGILUTION.</Link>
+            </div>
+            <div className="menu">
+              <button>Menu</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <Hamburger/>
-  </header>;
+      <Hamburger />
+    </header>
+  );
 };
 
 export default Header;
