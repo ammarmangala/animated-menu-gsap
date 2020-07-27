@@ -35,11 +35,11 @@ const Hamburger = () => {
               </div>
               <div className="locations">
                 Locations:
-                <span>Dallas</span>
-                <span>Austin</span>
-                <span>New York</span>
-                <span>San Francisco</span>
-                <span>Beijing</span>
+                <span>Toronto</span>
+                <span>Montreal</span>
+                <span>Vancouver</span>
+                <span>Québec</span>
+                <span>Ottawa</span>
               </div>
             </div>
           </div>

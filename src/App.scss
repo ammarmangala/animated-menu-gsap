@@ -13,7 +13,7 @@ body {
 
 .container {
   width: 1280px;
-  min-width: 1280;
+  min-width: 1280px;
   margin: 0 auto;
   .wrapper {
     padding: 0 48px;
@@ -31,15 +31,13 @@ body {
       }
       h5 {
         margin-top: 260px;
-        font-size: 1.5rem;
+        font-size: 24px;
         font-weight: 600;
         padding-right: 360px;
       }
     }
   }
 }
-
-// Header
 
 header {
   height: 100px;
@@ -52,6 +50,7 @@ header {
     align-items: center;
     .logo a {
       font-weight: 700;
+      font-size: 1rem;
       text-decoration: none;
       color: $black;
     }
@@ -60,29 +59,27 @@ header {
         border: none;
         background: none;
         outline: none;
-        cursor: poiter;
+        cursor: pointer;
         font-size: 0.8rem;
-        color: $black;
+        mix-blend-mode: difference;
       }
     }
   }
-  // Hamburger menu or navigation whatever
   .hamburger-menu {
-    //display: none;
+    display: none;
     z-index: 9;
     top: 0;
-    bottom: 0;
     left: 0;
     right: 0;
     position: fixed;
     height: 100%;
     width: 100%;
     .menu-secondary-background-color {
-      background-color: $black;
+      background: $black;
       top: 0;
-      bottom: 0;
       left: 0;
       right: 0;
+      bottom: 0;
       position: fixed;
       height: 100%;
       width: 100%;
@@ -90,18 +87,23 @@ header {
     }
     .menu-layer {
       position: relative;
-      background-color: $red;
+      background: $red;
       height: 100%;
       overflow: hidden;
       .menu-city-background {
         top: 0;
-        bottom: 0;
         left: 0;
         right: 0;
+        bottom: 0;
         position: absolute;
         height: 100%;
         width: 100%;
         opacity: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        animation-name: backgroundEffect;
+        animation-duration: 30s;
+        animation-iteration-count: infinite;
       }
       .wrapper {
         position: relative;
@@ -114,8 +116,8 @@ header {
           nav {
             display: block;
             ul {
-              padding: 0;
               margin: 0;
+              padding: 0;
               li {
                 list-style: none;
                 font-size: 6rem;
@@ -129,15 +131,68 @@ header {
                   position: absolute;
                   color: #fff;
                   text-decoration: none;
-                  &hover {
+                  &:hover {
                     color: $black;
                   }
                 }
               }
             }
           }
+          .info {
+            color: #fff;
+            width: 300px;
+            h3 {
+              font-size: 1.2rem;
+              margin: 8px auto;
+            }
+            p {
+              margin: 0 auto;
+              font-size: 0.8rem;
+            }
+          }
+        }
+        .locations {
+          position: absolute;
+          bottom: -80px;
+          color: #fff;
+          margin-top: 16px;
+          font-size: 0.8rem;
+          font-weight: 600;
+          span {
+            cursor: pointer;
+            &:first-child {
+              margin-left: 64px;
+            }
+            font-weight: 400;
+            margin: 0 32px;
+            transition: 0.3s ease-in-out;
+            &:hover {
+              color: #fff;
+              background: $black;
+              padding: 8px 24px;
+              border-radius: 4px;
+            }
+          }
         }
       }
     }
+  }
+}
+
+@keyframes backgroundEffect {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 40% 10%;
+  }
+  50% {
+    background-position: 0 10%;
+  }
+  75% {
+    background-position: 10% 40%;
+  }
+  100% {
+    background-position: 0% 0%;
   }
 }
