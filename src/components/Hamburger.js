@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Hamburger = () => {
+
+  
+
   return (
     <div className="hamburger-menu">
       <div className="menu-secondary-background-color"></div>
