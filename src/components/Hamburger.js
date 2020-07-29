@@ -10,7 +10,7 @@ import {
   handleHoverExit,
   handleCityReturn,
   handleCity,
-  staggerRevealClose
+  staggerRevealClose,
 } from "./Animations";
 
 import toronto from "../images/toronto.webp";
@@ -24,7 +24,7 @@ const cities = [
   { name: "Québec", image: quebec },
   { name: "Vancouver", image: vancouver },
   { name: "Ottawa", image: ottawa },
-  { name: "Montreal", image: montreal }
+  { name: "Montreal", image: montreal },
 ];
 
 const Hamburger = ({ state }) => {
@@ -56,7 +56,7 @@ const Hamburger = ({ state }) => {
       gsap.to([reveal1, reveal2], {
         duration: 0,
         opacity: 1,
-        height: "100%"
+        height: "100%",
       });
       staggerReveal(reveal1, reveal2);
       fadeInUp(info);
@@ -65,49 +65,54 @@ const Hamburger = ({ state }) => {
   }, [state]);
 
   return (
-    <div ref={el => (menuLayer = el)} className='hamburger-menu'>
+    <div ref={(el) => (menuLayer = el)} className="hamburger-menu">
       <div
-        ref={el => (reveal1 = el)}
-        className='menu-secondary-background-color'></div>
-      <div ref={el => (reveal2 = el)} className='menu-layer'>
+        ref={(el) => (reveal1 = el)}
+        className="menu-secondary-background-color"
+      ></div>
+      <div ref={(el) => (reveal2 = el)} className="menu-layer">
         <div
-          ref={el => (cityBackground = el)}
-          className='menu-city-background'></div>
-        <div className='container'>
-          <div className='wrapper'>
-            <div className='menu-links'>
+          ref={(el) => (cityBackground = el)}
+          className="menu-city-background"
+        ></div>
+        <div className="container">
+          <div className="wrapper">
+            <div className="menu-links">
               <nav>
                 <ul>
                   <li>
                     <Link
-                      onMouseEnter={e => handleHover(e)}
-                      onMouseOut={e => handleHoverExit(e)}
-                      ref={el => (line1 = el)}
-                      to='/opportunities'>
+                      onMouseEnter={(e) => handleHover(e)}
+                      onMouseOut={(e) => handleHoverExit(e)}
+                      ref={(el) => (line1 = el)}
+                      to="/opportunities"
+                    >
                       Opportunities
                     </Link>
                   </li>
                   <li>
                     <Link
-                      onMouseEnter={e => handleHover(e)}
-                      onMouseOut={e => handleHoverExit(e)}
-                      ref={el => (line2 = el)}
-                      to='/solutions'>
+                      onMouseEnter={(e) => handleHover(e)}
+                      onMouseOut={(e) => handleHoverExit(e)}
+                      ref={(el) => (line2 = el)}
+                      to="/solutions"
+                    >
                       Solutions
                     </Link>
                   </li>
                   <li>
                     <Link
-                      onMouseEnter={e => handleHover(e)}
-                      onMouseOut={e => handleHoverExit(e)}
-                      ref={el => (line3 = el)}
-                      to='/contact-us'>
+                      onMouseEnter={(e) => handleHover(e)}
+                      onMouseOut={(e) => handleHoverExit(e)}
+                      ref={(el) => (line3 = el)}
+                      to="/contact-us"
+                    >
                       Contact us
                     </Link>
                   </li>
                 </ul>
               </nav>
-              <div ref={el => (info = el)} className='info'>
+              <div ref={(el) => (info = el)} className="info">
                 <h3>Our Promise</h3>
                 <p>
                   The passage experienced a surge in popularity during the 1960s
@@ -116,14 +121,15 @@ const Hamburger = ({ state }) => {
                   their software.
                 </p>
               </div>
-              <div className='locations'>
+              <div className="locations">
                 Locations:
                 {/* Returning the list of cities */}
-                {cities.map(el => (
+                {cities.map((el) => (
                   <span
                     key={el.name}
                     onMouseEnter={() => handleCity(el.image, cityBackground)}
-                    onMouseOut={() => handleCityReturn(cityBackground)}>
+                    onMouseOut={() => handleCityReturn(cityBackground)}
+                  >
                     {el.name}
                   </span>
                 ))}
